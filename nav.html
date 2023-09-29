@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="keywords" content="">
+	<link rel="stylesheet" href="css/libs.min.css">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Навигация</title>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&apikey=9133eb49-3a97-4b2d-90be-6b80a97a5036" type="text/javascript"></script>
+</head>
+
+
+<body>
+
+	<div class="wrap">
+
+		<section class="navigation">
+			<div class="container">
+				<ul class="navigation__list">
+					<li><a href="index.html">Главная</a></li>
+					<li><a href="product-item.html">Продукция</a></li>
+				</ul>
+			</div>
+		</section>
+
+	</div>
+
+	<script src="js/libs.min.js"></script>
+<script src="js/main.min.js"></script>
+
+	<script type="text/javascript">
+    ymaps.ready(init);
+
+    function init() {
+        var myMap = new ymaps.Map("map", {
+            center: [55.748914, 37.535475],
+            zoom: 15
+        });
+
+        var myPlacemark = new ymaps.Placemark([55.748914, 37.535475], null, {
+            iconLayout: 'default#image',
+            iconImageHref: "img/map-icon.svg",
+            iconImageSize: [45, 60],
+            // iconImageOffset: [-15, -44]
+        });
+        myMap.geoObjects.add(myPlacemark);
+        myMap.behaviors.disable('scrollZoom');
+
+    }
+</script>
+
+</body>
+
+</html>
